@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp">
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/description"
-        android:layout_marginTop="14dp"
-        android:text="1h" />
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity">
 
     <ImageView
-        android:id="@+id/photo_User"
+        android:id="@+id/photoUser"
         android:layout_width="104dp"
         android:layout_height="46dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:layout_marginTop="7dp"
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="userPhoto" />
 
     <TextView
         android:id="@+id/profile"
@@ -32,27 +23,27 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/photo_User"
+        android:layout_toEndOf="@+id/photoUser"
         android:text="user"
         tools:ignore="RelativeOverlap" />
 
+
     <ImageView
-        android:id="@+id/photo"
+        android:id="@+id/pictureProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profile"
+        android:layout_below="@+id/photoUser"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
         android:contentDescription="image_posted"
         tools:src="@tools:sample/avatars" />
 
-
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photo"
+        android:layout_below="@id/pictureProfile"
         android:layout_marginStart="228dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
@@ -62,18 +53,31 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/photo"
+        android:layout_below="@id/pictureProfile"
         android:layout_marginStart="300dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="6dp"
         app:srcCompat="@drawable/ic_baseline_bookmark_24" />
 
 
-    <ImageButton
-        android:id="@+id/ivCoeur"
+
+
+    <ImageView
+        android:id="@+id/redHeart"
         android:layout_width="59dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photo"
+        android:layout_below="@id/pictureProfile"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        app:srcCompat="@drawable/cards_heart_color"
+        />
+
+    <ImageView
+        android:id="@+id/heart"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pictureProfile"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
@@ -83,7 +87,7 @@
         android:id="@+id/message"
         android:layout_width="59dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photo"
+        android:layout_below="@id/pictureProfile"
         android:layout_marginStart="128dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
@@ -93,15 +97,17 @@
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Likes"
-        android:layout_marginTop="15dp"
+        android:layout_below="@id/send"
+        android:layout_marginTop="38dp"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/Likes"
+        android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView5"
-        android:layout_marginTop="15dp"
-        android:text="8 Likes" />
+        android:layout_below="@+id/description"
+        android:layout_marginTop="14dp"
+        android:text="1h" />
+
+
 </RelativeLayout>

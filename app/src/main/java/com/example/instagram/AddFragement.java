@@ -1,11 +1,18 @@
 package com.example.instagram;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -18,11 +25,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.content.FileProvider;
-import androidx.fragment.app.Fragment;
-
 import com.google.android.material.textfield.TextInputLayout;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -34,9 +36,9 @@ import com.parse.SaveCallback;
 import java.io.File;
 import java.util.List;
 
-public class AddFragement extends Fragment {
+class AddFragment extends Fragment {
 
-    public static final String TAG = "AddFragement ";
+    public static final String TAG = " AddFragment";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
     private EditText etDescription;
     private Button btnCaptureImage;
@@ -47,7 +49,7 @@ public class AddFragement extends Fragment {
     private TextInputLayout description;
     public String photoFileName = "photo.jpg";
 
-    public AddFragement() {
+    public AddFragment() {
     }
 
 
@@ -66,14 +68,14 @@ public class AddFragement extends Fragment {
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                  launchCamera();
+                launchCamera();
                 Toast.makeText(getContext(), "Take", Toast.LENGTH_SHORT).show();
             }
 
         });
 
 
-        queryPosts();
+        // queryPosts();
 
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +118,7 @@ public class AddFragement extends Fragment {
         // wrap File object into a content provider
         // required for API >= 24
         // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
-        Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.example.fileprovider", photoFile);
+        Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.codpath.fileprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
         // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
@@ -166,24 +168,6 @@ public class AddFragement extends Fragment {
     }
 
 
-    private void queryPosts() {
-
-        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
-        query.include(Post.KEY_USER);
-        query.findInBackground(new FindCallback<Post>() {
-            @Override
-            public void done(List<Post> posts, ParseException e) {
-                if (e != null){
-                    Log.e(TAG, "Issue with getting posts", e);
-                    return;
-                }
-                for (Post post: posts){
-                    Log.i(TAG, "Post"+post.getDescription() + "username"+post.getUser().getUsername());
-                }
-
-            }
-        });
-    }
 
     private void SavePost(String description, ParseUser currentUser, File photoFile) {
         pbLoading.setVisibility(ProgressBar.VISIBLE); // show the progressBar

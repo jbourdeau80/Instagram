@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         // define your fragments here
         final Fragment actionHome = new HomeFragment();
-        final Fragment actionProfile = new AccountFragment();
-        final Fragment actionAdd = new AddFragement();
+        final Fragment actionProfile = new AccountFragement();
+        final Fragment actionAdd = new AddFragment();
 
         bottom_navigation = findViewById(R.id.bottom_navigation);
 
