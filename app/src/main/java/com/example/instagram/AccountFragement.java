@@ -44,7 +44,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-class AccountFragement extends Fragment {
+public class AccountFragement extends Fragment {
 
     public static final String TAG = "AccountFragement ";
     public String photoFileName = "photo.jpg";
@@ -76,13 +76,14 @@ class AccountFragement extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         Bundle bundle = getArguments();
+        Post post = Parcels.unwrap(bundle.getParcelable("post"));
+
+
         if (bundle == null){
             parseUser = ParseUser.getCurrentUser();
         }
         else {
-            Post post = Parcels.unwrap(bundle.getParcelable("post"));
             parseUser = post.getUser();
         }
 
@@ -95,7 +96,6 @@ class AccountFragement extends Fragment {
         adapterGridView = new AdapterGridView(getContext(),postList);
         gridView.setAdapter(adapterGridView);
         userName.setText(parseUser.getUsername());
-
         Glide.with(getContext()).load(parseUser.getParseFile("photoUser")
                 .getUrl()).transform(new  CenterCrop()).into(photoUser);
 

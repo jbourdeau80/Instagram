@@ -36,7 +36,7 @@ import com.parse.SaveCallback;
 import java.io.File;
 import java.util.List;
 
-class AddFragment extends Fragment {
+public class AddFragment extends Fragment {
 
     public static final String TAG = " AddFragment";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;

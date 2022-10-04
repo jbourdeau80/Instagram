@@ -6,10 +6,13 @@
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/drawable/cards_heart.xml" value="0.2115" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/drawable/cards_heart_color.xml" value="0.2115" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/drawable/cards_heart_outline.xml" value="0.2115" />
-        <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_detail.xml" value="0.5" />
+        <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_detail.xml" value="0.18" />
+        <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/activity_postadapter.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/fragment_account.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/fragment_account2.xml" value="0.1" />
+        <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/fragment_account3.xml" value="0.1" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/gridview_adapter.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Jennifer/AndroidStudioProjects/Instagram/app/src/main/res/layout/item_post.xml" value="0.20416666666666666" />

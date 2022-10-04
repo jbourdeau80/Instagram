@@ -49,18 +49,16 @@
         android:layout_marginTop="5dp"
         app:srcCompat="@drawable/send" />
 
+
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/bookmark"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/pictureProfile"
         android:layout_marginStart="300dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="-7dp"
         app:srcCompat="@drawable/ic_baseline_bookmark_24" />
-
-
-
 
     <ImageView
         android:id="@+id/redHeart"

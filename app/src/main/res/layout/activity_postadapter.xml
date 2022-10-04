@@ -37,7 +37,7 @@
         tools:ignore="RelativeOverlap" />
 
     <ImageView
-        android:id="@+id/photo"
+        android:id="@+id/pictureProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile"
@@ -52,28 +52,39 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photo"
+        android:layout_below="@+id/pictureProfile"
         android:layout_marginStart="228dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
         app:srcCompat="@drawable/send" />
 
+
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/bookmark"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/photo"
+        android:layout_below="@+id/pictureProfile"
         android:layout_marginStart="300dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="-2dp"
         app:srcCompat="@drawable/ic_baseline_bookmark_24" />
 
-
-    <ImageButton
-        android:id="@+id/ivCoeur"
+    <ImageView
+        android:id="@+id/redHeart"
         android:layout_width="59dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photo"
+        android:layout_below="@id/pictureProfile"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        app:srcCompat="@drawable/cards_heart_color"
+        />
+
+    <ImageView
+        android:id="@+id/heart"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pictureProfile"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
@@ -83,7 +94,7 @@
         android:id="@+id/message"
         android:layout_width="59dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photo"
+        android:layout_below="@+id/pictureProfile"
         android:layout_marginStart="128dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"

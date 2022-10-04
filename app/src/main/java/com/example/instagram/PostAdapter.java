@@ -81,7 +81,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView  pictureProfile,photo_User,message;
-        ImageButton ivCoeur;
+        ImageView redheart,heart;
         TextView profile, description,time,Likes;
         RelativeLayout container;
 
@@ -94,7 +94,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
             pictureProfile = itemView.findViewById(R.id.pictureProfile);
             photo_User = itemView.findViewById(R.id.photo_User);
-            ivCoeur = itemView.findViewById(R.id.ivCoeur);
+            redheart = itemView.findViewById(R.id.redHeart);
+            heart = itemView.findViewById(R.id.redHeart);
             message = itemView.findViewById(R.id.message);
             container = itemView.findViewById(R.id.container);
 
@@ -117,16 +118,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             try {
                 if (likes.contains(parseUser.getObjectId())){
                     Drawable drawable = ContextCompat.getDrawable(context,R.drawable.cards_heart_color);
-                    ivCoeur.setImageDrawable(drawable);
+                    redheart.setImageDrawable(drawable);
                 }else {
                     Drawable drawable = ContextCompat.getDrawable(context,R.drawable.cards_heart_outline);
-                    ivCoeur.setImageDrawable(drawable);
+                    heart.setImageDrawable(drawable);
                 }
             }catch (NullPointerException e){
                 e.printStackTrace();
             }
 
-            ivCoeur.setOnClickListener(new View.OnClickListener() {
+            heart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     nbrsLikes = post.getLike();
@@ -134,13 +135,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
                     if (! likes.contains(parseUser.getObjectId())){
                         Drawable drawable = ContextCompat.getDrawable(context,R.drawable.cards_heart_color);
-                        ivCoeur.setImageDrawable(drawable);
+                        redheart.setImageDrawable(drawable);
                         nbrsLikes++;
                         index = -1;
 
                     }else {
                         Drawable drawable = ContextCompat.getDrawable(context,R.drawable.cards_heart_outline);
-                        ivCoeur.setImageDrawable(drawable);
+                        heart.setImageDrawable(drawable);
                         nbrsLikes--;
                         index = likes.indexOf(parseUser.getObjectId());
                     }
